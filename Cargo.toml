@@ -1,0 +1,21 @@
+[package]
+name = "request_catcher"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+anyhow = "1"
+wasi = "0.13.3"
+
+[lib]
+crate-type = ["cdylib"]
+
+[profile.release]
+codegen-units = 1
+opt-level = "s"
+debug = false
+strip = true
+lto = true
+
+
+[package.metadata.component.dependencies]
